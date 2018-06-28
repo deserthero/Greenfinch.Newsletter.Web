@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\IInfrastructures\" />
+    <Folder Include="Interfaces\IRepositories\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Greenfinch.Newsletter.Web.Core.Models\Greenfinch.Newsletter.Web.Core.Models.csproj" />
+  </ItemGroup>
+
+</Project>

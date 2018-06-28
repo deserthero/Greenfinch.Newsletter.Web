@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F5F3364C-004B-4DDB-A280-BDC3C0C1218F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0CCFD49F-D215-4BD3-BD54-044A4A3FB75B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2F1330D1-014C-407E-A702-282C2F12CFD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9484FDC3-62DC-4DBA-9201-73E44F4B07D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{DA7290F3-D2EB-4DDD-BB2A-E81EC08ECADC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7BAD0D94-A5C4-4794-8343-24F64854DBAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.MVC", "..\Greenfinch.Newsletter.Web.MVC\Greenfinch.Newsletter.Web.MVC.csproj", "{70FBEB18-A057-4EAF-A404-73AEA112B4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Core.Services", "Greenfinch.Newsletter.Web.Core\Greenfinch.Newsletter.Web.Core.Services.csproj", "{7327BC18-40E3-4D77-AB6F-90740CC50B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Infrastructure.EF", "Greenfinch.Newsletter.Web.Infrastructure\Greenfinch.Newsletter.Web.Infrastructure.EF.csproj", "{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Core.Tests", "Greenfinch.Newsletter.Web.Core.Tests\Greenfinch.Newsletter.Web.Core.Tests.csproj", "{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Common", "Greenfinch.Newsletter.Web.Common\Greenfinch.Newsletter.Web.Common.csproj", "{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Core.Models", "Greenfinch.Newsletter.Web.Core.Models\Greenfinch.Newsletter.Web.Core.Models.csproj", "{A896EAEA-9BF1-477C-81BA-8742C083ED2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5F3364C-004B-4DDB-A280-BDC3C0C1218F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F3364C-004B-4DDB-A280-BDC3C0C1218F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F3364C-004B-4DDB-A280-BDC3C0C1218F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F3364C-004B-4DDB-A280-BDC3C0C1218F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FBEB18-A057-4EAF-A404-73AEA112B4BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FBEB18-A057-4EAF-A404-73AEA112B4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FBEB18-A057-4EAF-A404-73AEA112B4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FBEB18-A057-4EAF-A404-73AEA112B4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70FBEB18-A057-4EAF-A404-73AEA112B4BB} = {DA7290F3-D2EB-4DDD-BB2A-E81EC08ECADC}
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D} = {2F1330D1-014C-407E-A702-282C2F12CFD0}
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174} = {9484FDC3-62DC-4DBA-9201-73E44F4B07D6}
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3} = {7BAD0D94-A5C4-4794-8343-24F64854DBAA}
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6} = {0CCFD49F-D215-4BD3-BD54-044A4A3FB75B}
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B} = {2F1330D1-014C-407E-A702-282C2F12CFD0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0615ABE0-A198-4DCE-911B-ADC98D489BD1}
+	EndGlobalSection
+EndGlobal

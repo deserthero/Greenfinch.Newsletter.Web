@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  greenfinch.newsletter.web:
+    image: greenfinch.newsletter.web
+    build:
+      context: .
+      dockerfile: Greenfinch.Newsletter.Web\Dockerfile
+
+  greenfinch.newsletter.web.mvc:
+    image: greenfinch.newsletter.web.mvc
+    build:
+      context: .
+      dockerfile: ..\Greenfinch.Newsletter.Web.MVC\Dockerfile
+
