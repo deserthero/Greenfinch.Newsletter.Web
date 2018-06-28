@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7BAD0D94-A5C4-4794-8343-24F64854DBAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.MVC", "..\Greenfinch.Newsletter.Web.MVC\Greenfinch.Newsletter.Web.MVC.csproj", "{70FBEB18-A057-4EAF-A404-73AEA112B4BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.MVC", "Greenfinch.Newsletter.Web.MVC\Greenfinch.Newsletter.Web.MVC.csproj", "{70FBEB18-A057-4EAF-A404-73AEA112B4BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Greenfinch.Newsletter.Web.Core.Services", "Greenfinch.Newsletter.Web.Core\Greenfinch.Newsletter.Web.Core.Services.csproj", "{7327BC18-40E3-4D77-AB6F-90740CC50B7D}"
 EndProject

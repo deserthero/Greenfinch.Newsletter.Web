@@ -11,5 +11,5 @@ services:
     image: greenfinch.newsletter.web.mvc
     build:
       context: .
-      dockerfile: ..\Greenfinch.Newsletter.Web.MVC\Dockerfile
+      dockerfile: Greenfinch.Newsletter.Web.MVC\Dockerfile
 
