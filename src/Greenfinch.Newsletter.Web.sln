@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{0CCFD49F-D215-4BD3-BD54-044A4A3FB75B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2F1330D1-014C-407E-A702-282C2F12CFD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{9484FDC3-62DC-4DBA-9201-73E44F4B07D6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{DA7290F3-D2EB-4DDD-BB2A-E81EC08ECADC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7BAD0D94-A5C4-4794-8343-24F64854DBAA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Core.Services", "Greenfinch.Newsletter.Web.Core\Greenfinch.Newsletter.Web.Core.Services.csproj", "{7327BC18-40E3-4D77-AB6F-90740CC50B7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Infrastructure.EF", "Greenfinch.Newsletter.Web.Infrastructure\Greenfinch.Newsletter.Web.Infrastructure.EF.csproj", "{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Core.Services.Tests", "..\tests\Greenfinch.Newsletter.Web.Core.Tests\Greenfinch.Newsletter.Web.Core.Services.Tests.csproj", "{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Common", "Greenfinch.Newsletter.Web.Common\Greenfinch.Newsletter.Web.Common.csproj", "{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Core.Models", "Greenfinch.Newsletter.Web.Core.Models\Greenfinch.Newsletter.Web.Core.Models.csproj", "{A896EAEA-9BF1-477C-81BA-8742C083ED2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.MVC", "Greenfinch.Newsletter.Web.MVC\Greenfinch.Newsletter.Web.MVC.csproj", "{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7327BC18-40E3-4D77-AB6F-90740CC50B7D} = {2F1330D1-014C-407E-A702-282C2F12CFD0}
+		{0DDC5F39-0B55-4D4A-BA72-B8DE97E29174} = {9484FDC3-62DC-4DBA-9201-73E44F4B07D6}
+		{5FC80E44-BE66-4CBA-97D6-006284BCFCB3} = {7BAD0D94-A5C4-4794-8343-24F64854DBAA}
+		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6} = {0CCFD49F-D215-4BD3-BD54-044A4A3FB75B}
+		{A896EAEA-9BF1-477C-81BA-8742C083ED2B} = {2F1330D1-014C-407E-A702-282C2F12CFD0}
+		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB} = {DA7290F3-D2EB-4DDD-BB2A-E81EC08ECADC}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0615ABE0-A198-4DCE-911B-ADC98D489BD1}
+	EndGlobalSection
+EndGlobal
