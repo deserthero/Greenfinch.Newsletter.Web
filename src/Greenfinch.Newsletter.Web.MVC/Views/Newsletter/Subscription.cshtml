@@ -3,7 +3,7 @@
 @model Greenfinch.Newsletter.Web.MVC.ViewModels.SubscriberViewModel
 @inject IViewLocalizer Localizer
 @{
-    ViewBag.Title = Localizer["NewsletterSubscriptionPageTitle"];
+    
 }
 
 <h2>@ViewBag.Title</h2>
@@ -35,7 +35,7 @@
 
     <div class="form-group">
         <div class="col-md-offset-3 col-md-9">
-            <input type="submit" class="btn btn-primary" value='Localizer["SignUp"]' />
+            <input type="submit" class="btn btn-primary" value="ViewBag.SignUp" />
         </div>
     </div>
 }

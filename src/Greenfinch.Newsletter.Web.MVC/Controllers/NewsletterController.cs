@@ -35,8 +35,9 @@ namespace Greenfinch.Newsletter.Web.MVC.Controllers
         [HttpGet]
         public ActionResult Subscription()
         {
+            ViewBag.Title = _localizer["NewsletterSubscriptionPageTitle"].Value;
+            ViewBag.SignUp = _localizer["Signup"];
             ViewBag.HeardFrom = GetHeardFromList();
-
             return View();
         }
 
@@ -72,17 +73,19 @@ namespace Greenfinch.Newsletter.Web.MVC.Controllers
 
 
         #region Private Methods
+
         private SelectList GetHeardFromList()
         {
             return new SelectList(Enum.GetValues(typeof(HeardAboutUsFrom)).OfType<Enum>()
                 .Select(x =>
                     new SelectListItem
                     {
-                        Text = x.GetDisplayName(),
+                        Text = _localizer[x.ToString()],
                         Value = (Convert.ToInt32(x)).ToString()
                     }), "Value", "Text");
 
         }
+
         #endregion
 
     }

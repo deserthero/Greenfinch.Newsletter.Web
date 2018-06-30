@@ -17,8 +17,9 @@ using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IServices;
 using Greenfinch.Newsletter.Web.Core.Services.Services;
 using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IInfrastructures.IRepositories;
 using Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories;
-using Greenfinch.Newsletter.Web.MVC.Resources;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 namespace Greenfinch.Newsletter.Web.MVC
 {
@@ -55,17 +56,16 @@ namespace Greenfinch.Newsletter.Web.MVC
             services.AddScoped<INewsletterSubscriptionService, NewsletterSubscriptionService>();
 
 
-            services.AddMvc().
-                SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
-                .AddDataAnnotationsLocalization(options =>
-                {
-                    options.DataAnnotationLocalizerProvider = (type, factory) =>
-                        factory.Create(typeof(SharedResource));
-                }).
-                AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
             services
        .AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc().
+                SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+              .AddDataAnnotationsLocalization();
+
+
 
 
             services.AddAutoMapper(typeof(Startup));
@@ -98,6 +98,33 @@ namespace Greenfinch.Newsletter.Web.MVC
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+            // Localization: Here we are building a list of supported cultures which will be used in
+            //               the RequestLocalizationOptions in the app.UseRequestLocalization call below.
+            var supportedCultures = new[]
+              {
+                    new CultureInfo("en-US"),
+                    new CultureInfo("es-MX"),
+                    new CultureInfo("fr-FR"),
+              };
+
+            // Localization: Here we are configuring the RequstLocalization including setting the supported cultures from above
+            //               in the RequestLocalizationOptions. We are also setting the default request culture to be used
+            //               for current culture. These options will be used wherever we request localized strings.
+            //               For more information see https://docs.asp.net/en/latest/fundamentals/localization.html
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("en-US"),
+
+                // Formatting numbers, dates, etc.
+                SupportedCultures = supportedCultures,
+
+                // UI strings that we have localized.
+                SupportedUICultures = supportedCultures
+            });
+
+
         }
     }
 }
