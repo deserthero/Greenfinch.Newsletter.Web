@@ -9,9 +9,16 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Greenfinch.Newsletter.Web.MVC.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Greenfinch.Newsletter.Web.Infrastructure.EF.DAL;
+using AutoMapper;
+using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IServices;
+using Greenfinch.Newsletter.Web.Core.Services.Services;
+using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IInfrastructures.IRepositories;
+using Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories;
+using Greenfinch.Newsletter.Web.MVC.Resources;
+using Microsoft.AspNetCore.Mvc.Razor;
 
 namespace Greenfinch.Newsletter.Web.MVC
 {
@@ -37,10 +44,32 @@ namespace Greenfinch.Newsletter.Web.MVC
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(GenericRepository<>));
+            services.AddScoped<ISubscriptionRepository, SubscriptionSqlRepository>();
+            services.AddScoped<INewsletterSubscriptionService, NewsletterSubscriptionService>();
+
+
+            services.AddMvc().
+                SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                        factory.Create(typeof(SharedResource));
+                }).
+                AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+            services
+       .AddLocalization(options => options.ResourcesPath = "Resources");
+
+
+            services.AddAutoMapper(typeof(Startup));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

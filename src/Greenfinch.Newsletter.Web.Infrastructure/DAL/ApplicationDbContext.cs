@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Greenfinch.Newsletter.Web.Core.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Greenfinch.Newsletter.Web.MVC.Data
+namespace Greenfinch.Newsletter.Web.Infrastructure.EF.DAL
 {
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -12,5 +13,7 @@ namespace Greenfinch.Newsletter.Web.MVC.Data
             : base(options)
         {
         }
+
+        public DbSet<Subscriber> Subscribers { get; set; }
     }
 }

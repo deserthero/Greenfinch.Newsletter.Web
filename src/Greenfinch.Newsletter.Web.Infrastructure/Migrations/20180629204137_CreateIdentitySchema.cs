@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Greenfinch.Newsletter.Web.MVC.Data.Migrations
+namespace Greenfinch.Newsletter.Web.Infrastructure.EF.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

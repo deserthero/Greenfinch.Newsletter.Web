@@ -1,0 +1,42 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@model Greenfinch.Newsletter.Web.MVC.ViewModels.SubscriberViewModel
+@inject IViewLocalizer Localizer
+@{
+    ViewBag.Title = Localizer["NewsletterSubscriptionPageTitle"];
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("SignUp", "Newsletter", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-3 control-label" })
+        <div class="col-md-9">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.HeardFrom, new { @class = "col-md-3 control-label" })
+        <div class="col-md-9">
+            @Html.DropDownListFor(m => m.HeardFrom, (SelectList)ViewBag.HeardFrom, "Select..", new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReasonForSignup, new { @class = "col-md-3 control-label" })
+        <div class="col-md-9">
+            @Html.TextAreaFor(m => m.ReasonForSignup, 5, 40, new { @class = "form-control", style = "width: 100%; max-width: 100%;" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-3 col-md-9">
+            <input type="submit" class="btn btn-primary" value='Localizer["SignUp"]' />
+        </div>
+    </div>
+}
+
