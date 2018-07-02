@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.MVC", "Greenfinch.Newsletter.Web.MVC\Greenfinch.Newsletter.Web.MVC.csproj", "{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService", "Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService\Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService.csproj", "{DF769CEC-55C6-46A5-9825-A53053322401}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,10 @@ Global
 		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF769CEC-55C6-46A5-9825-A53053322401}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF769CEC-55C6-46A5-9825-A53053322401}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF769CEC-55C6-46A5-9825-A53053322401}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF769CEC-55C6-46A5-9825-A53053322401}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,6 +72,7 @@ Global
 		{296BD8EF-EF83-4DE7-9E25-B4B9361AAEC6} = {0CCFD49F-D215-4BD3-BD54-044A4A3FB75B}
 		{A896EAEA-9BF1-477C-81BA-8742C083ED2B} = {2F1330D1-014C-407E-A702-282C2F12CFD0}
 		{8E5CF0F9-87A9-46A9-A3A9-BD0431145FDB} = {DA7290F3-D2EB-4DDD-BB2A-E81EC08ECADC}
+		{DF769CEC-55C6-46A5-9825-A53053322401} = {9484FDC3-62DC-4DBA-9201-73E44F4B07D6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0615ABE0-A198-4DCE-911B-ADC98D489BD1}

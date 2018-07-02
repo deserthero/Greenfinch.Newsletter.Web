@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Greenfinch.Newsletter.Web.MVC
 {
+    /// <summary>
+    /// AutoMapper Mapping Profile.
+    /// </summary>
     public class MappingProfile : Profile
     {
         public MappingProfile()

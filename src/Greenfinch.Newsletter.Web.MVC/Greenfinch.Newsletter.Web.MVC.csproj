@@ -13,12 +13,55 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService\Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService.csproj" />
     <ProjectReference Include="..\Greenfinch.Newsletter.Web.Infrastructure\Greenfinch.Newsletter.Web.Infrastructure.EF.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\ViewModels\Subscriber.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Subscriber.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Auth\Login.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Login.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Views\Newsletter\SubscriptionSuccess.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SubscriptionSuccess.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\Controllers\NewsletterController.en-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SharedResources.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\ViewModels\Subscriber.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Subscriber.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Auth\Login.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Home\Index.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Newsletter\SubscribersList.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Newsletter\Subscription.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Views\Newsletter\SubscriptionSuccess.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SubscriptionSuccess.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

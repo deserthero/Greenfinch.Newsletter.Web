@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Greenfinch.Newsletter.Web.MVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using Greenfinch.Newsletter.Web.MVC.Models;
 
 namespace Greenfinch.Newsletter.Web.MVC.Controllers
 {
+    /// <summary>
+    /// HomeController
+    /// </summary>
     public class HomeController : Controller
     {
+        #region Public Actions
         public IActionResult Index()
         {
             return View();
@@ -22,14 +26,7 @@ namespace Greenfinch.Newsletter.Web.MVC.Controllers
             return View();
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Privacy()
+        public ActionResult ModalPopUp()
         {
             return View();
         }
@@ -38,6 +35,7 @@ namespace Greenfinch.Newsletter.Web.MVC.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        } 
+        #endregion
     }
 }

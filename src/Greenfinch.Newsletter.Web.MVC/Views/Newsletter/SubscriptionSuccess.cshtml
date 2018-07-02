@@ -1,0 +1,14 @@
+﻿@page
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewBag.Title = Localizer["Title"];
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="bg-success"> @ViewBag.SendTo @(ViewBag.SendTo == null ? ' ': ',')  Congratulations. You have been successfully subscribed. Also We sent a welcome mail contains more instructions.</h3>
+        </div>
+    </div>
+</div>

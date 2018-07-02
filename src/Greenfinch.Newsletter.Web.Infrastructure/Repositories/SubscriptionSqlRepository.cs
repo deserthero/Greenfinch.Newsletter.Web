@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories
 {
+    /// <summary>
+    /// Sql Server Subscription Repository
+    /// </summary>
     public class SubscriptionSqlRepository : GenericRepository<Subscriber>, ISubscriptionRepository
     {
         public SubscriptionSqlRepository(ApplicationDbContext dbContext) : base(dbContext) { }

@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Greenfinch.Newsletter.Web.Core.Models
 {
-    // This can easily be modified to be BaseEntity<T> and public T Id to support different key types.
+    /// <summary>
+    /// This can easily be modified to be BaseEntity<T> and public T Id to support different key types.
+    /// </summary>
     public class BaseEntity
     {
         public Guid Id { get; set; }

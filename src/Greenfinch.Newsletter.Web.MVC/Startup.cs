@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +16,10 @@ using Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
+using Greenfinch.Newsletter.Web.Common.Interfaces;
+using Greenfinch.Newsletter.Web.Common;
+using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IInfrastructures;
+using Greenfinch.Newsletter.Web.Infrastructure.FakeEmailService;
 
 namespace Greenfinch.Newsletter.Web.MVC
 {
@@ -46,24 +46,74 @@ namespace Greenfinch.Newsletter.Web.MVC
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddIdentity<IdentityUser, IdentityRole>(options =>
+             {
 
 
+             }).AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 6;
+
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+                options.Lockout.AllowedForNewUsers = true;
+
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+                // If the LoginPath isn't set, ASP.NET Core defaults 
+                // the path to /Account/Login.
+                options.LoginPath = "/Auth/Login";
+                options.SlidingExpiration = true;
+            });
+
+
+            // Custom Services Injection
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
             services.AddScoped(typeof(IAsyncRepository<>), typeof(GenericRepository<>));
             services.AddScoped<ISubscriptionRepository, SubscriptionSqlRepository>();
             services.AddScoped<INewsletterSubscriptionService, NewsletterSubscriptionService>();
 
+            var emailService = Configuration.GetSection("ApplicationSettings")["EmailService"];
+
+            // Here i want only to show that the injection of a concrete implementation can be changed easily based on configuration
+            if (string.IsNullOrEmpty(emailService))
+                services.AddScoped<IEmailService, FakeEmailService>();
+            else
+                services.AddScoped<IEmailService, AnotherFakeEmailService>();
 
 
-            services
-       .AddLocalization(options => options.ResourcesPath = "Resources");
 
-            services.AddMvc().
-                SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+
+            services.AddSingleton<IAppConfigManager, AppConfigManager>();
+
+
+
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-              .AddDataAnnotationsLocalization();
+              .AddDataAnnotationsLocalization(options =>
+              {
+
+              });
 
 
 
@@ -73,7 +123,7 @@ namespace Greenfinch.Newsletter.Web.MVC
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager, IAppConfigManager appConfigManager)
         {
             if (env.IsDevelopment())
             {
@@ -91,6 +141,10 @@ namespace Greenfinch.Newsletter.Web.MVC
             app.UseCookiePolicy();
 
             app.UseAuthentication();
+
+            // Seed a sample User and role
+            IdentityDataInitializer.SeedData(userManager, roleManager, appConfigManager);
+
 
             app.UseMvc(routes =>
             {

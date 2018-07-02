@@ -1,5 +1,6 @@
 ﻿using Greenfinch.Newsletter.Web.Core.Models;
 using Greenfinch.Newsletter.Web.Core.Services.Interfaces.IInfrastructures.IRepositories;
+using Greenfinch.Newsletter.Web.Core.Services.Interfaces.ISpecifications;
 using Greenfinch.Newsletter.Web.Infrastructure.EF.DAL;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories
 {
+    /// <summary>
+    /// Generic Repository Concrete Implementation using Sync and Async features
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class GenericRepository<T> : IRepository<T>, IAsyncRepository<T> where T : BaseEntity
     {
         protected readonly ApplicationDbContext _dbContext;
@@ -28,6 +33,13 @@ namespace Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories
         {
             return List(spec).FirstOrDefault();
         }
+
+        public async Task<T> GetSingleBySpecAsync(ISpecification<T> spec)
+        {
+            var result = await ListAsync(spec);
+            return result.FirstOrDefault();
+        }
+
 
         public virtual async Task<T> GetByIdAsync(Guid id)
         {
@@ -119,5 +131,6 @@ namespace Greenfinch.Newsletter.Web.Infrastructure.EF.Repositories
             _dbContext.Set<T>().Remove(entity);
             await _dbContext.SaveChangesAsync();
         }
+
     }
 }

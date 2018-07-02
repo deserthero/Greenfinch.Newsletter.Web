@@ -120,14 +120,11 @@
   <data name="Advert" xml:space="preserve">
     <value>Advert</value>
   </data>
-  <data name="NewsletterSubscriptionPageTitle" xml:space="preserve">
-    <value>Newsletter  Subscription</value>
+  <data name="EmailHasBeenExists" xml:space="preserve">
+    <value>This Email Has Already Exists, Please Try Another!</value>
   </data>
   <data name="Other" xml:space="preserve">
     <value>Other</value>
-  </data>
-  <data name="SignUp" xml:space="preserve">
-    <value>Signup</value>
   </data>
   <data name="WordOfMouth" xml:space="preserve">
     <value>WordOfMouth</value>

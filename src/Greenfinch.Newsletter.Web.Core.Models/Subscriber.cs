@@ -2,7 +2,9 @@
 
 namespace Greenfinch.Newsletter.Web.Core.Models
 {
-
+    /// <summary>
+    /// Subscriber POCO Class 
+    /// </summary>
     public class Subscriber : BaseEntity
     {
         public string Email { get; set; }

@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Greenfinch.Newsletter.Web.Common\Greenfinch.Newsletter.Web.Common.csproj" />
     <ProjectReference Include="..\Greenfinch.Newsletter.Web.Core\Greenfinch.Newsletter.Web.Core.Services.csproj" />
   </ItemGroup>
   <ItemGroup>
