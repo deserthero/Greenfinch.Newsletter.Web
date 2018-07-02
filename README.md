@@ -22,12 +22,14 @@ Newsletter Application
 - Make sure to run with VisualStudio 2017 or from command line (.NET Core Runtime should be installed)
 - Once the app run, it seed admin user and role to use it as admin (Can be changed from configurations)
 # Setup with VisualStudio:
-- Make sure to have version supports .Net Core and the .Net Core 2 runtime installed and open solution from src folder.
+- Make sure to have Visual Studio that supports .Net Core.
+- Make sure that the .Net Core 2 runtime installed.
+-  open solution from src folder.
 - Make sure to mark Presentation > Greenfinch.Newsletter.Web.MVC as Startup project
 - Restore Nuget Packages
 - Select the EntityFramework project from Nuget Package Manager then Update-Database to update the database from code and seed needed data (You may need to change connectionstring from appsettings and appsettings.development based on your prefrances)
 - Run with IISExpress or IIS
 - Note: If you wish you can use dotnet core command line commands to run the project.
-# CI/CI and Dockrization
+# CI/CD and Dockrization
 - I Used Travis CI for CI
 - Also project prepared to be deployed correctly on Docker (Only there are a missing orchstration step in scripts/docker-compose.yml which need to add a docker image for nanoserver or sqlserver and adjust the network configuration between the dotnet core app docker and the sql docker)
