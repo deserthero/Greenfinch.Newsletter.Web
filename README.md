@@ -16,3 +16,8 @@ Newsletter Application
 - App should run without any issue on IIS or IIS Express
 - Make sure to run with VisualStudio 2017 or from comand line (.NET Core Runtime should be installed)
 - Once the app run, it seed admin user and role to use it as admin (Can be changed from configurations)
+# Setup with VisualStudio:
+- Make sure to have version supports .Net Core and the .Net Core 2 runtime installed.
+- Restore Nuget Packages
+- Select the EntityFramework project from Nuget Package Manager then Update-Database to update the database from code and seed needed data
+- Run with IISExpress or IIS
